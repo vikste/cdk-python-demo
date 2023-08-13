@@ -22,6 +22,6 @@ class HitCounter(Construct):
             self, 'HitCountHandler',
             runtime = _lambda.Runtime.PYTHON_3_7,
             handler='hitcount.handler',
-            environment={'DOWNSTREAM_FUNCTION_NAME': downstream.fuction_name,
+            environment={'DOWNSTREAM_FUNCTION_NAME': downstream.function_name,
                          'HITS_TABLE_NAME': table.table_name}
         )
