@@ -12,7 +12,7 @@ def handler(event, context):
     table.update_item(
         Key = {'path': event['path']},
         UpdateExpression = 'ADD hits :incr',
-        ExpressionAttributeValues={':incr':1}
+        ExpressionAttributeValues={':incr': 1}
     )
 
     resp = _lambda.invoke(

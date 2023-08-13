@@ -10,11 +10,11 @@ class HitCounter(Construct):
     
 
     def __init__(self, scope: Construct, id: str,
-                 downstream: _lambda.IFunction, **kwargs) -> None:
+                 downstream: _lambda.IFunction, **kwargs):
         super().__init__(scope, id, **kwargs)
 
         table = ddb.Table(
-            self,
+            self, 'Hits',
             partition_key = {'name': 'path', 'type': ddb.AttributeType.STRING}
         )
 
